@@ -6,8 +6,6 @@ console.log("Client side js loaded!");
 //     });
 // });
 
-
-
 const weatherForm = document.querySelector('form');
 const search = document.querySelector('input');
 
@@ -17,7 +15,7 @@ weatherForm.addEventListener('submit', (event) => {
 
     event.preventDefault();
     const location = search.value;
-    fetch('http://localhost:4200/weather?address=' + location).then((response) => {
+    fetch('/weather?address=' + location).then((response) => {
     response.json().then((data) => {
         if(data.error){
              messageTwo.innerHTML = data.error; 
